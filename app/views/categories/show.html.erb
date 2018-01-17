@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @category.name %>
+</p>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
+
+<h2>Lista de Productos</h2>
+
+<ul>
+<% @products.each do |product| %>
+<li><%= product.name %> - <%= product.price %></li>
+<% end %>
+</ul>
+
+<%= link_to 'Crear nuevo producto', new_category_product_path(@category) %>
